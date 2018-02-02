@@ -1,0 +1,17 @@
+Please
+find
+all
+the
+hello
+lines
+everyone
+in
+the
+file
+called
+hw02
+that
+begin
+with
+3
+numbers

@@ -1,0 +1,10 @@
+this is a test A_file for the homework assignment.
+please find the B_lines with three numbers (e.g. 397) at the beginning of line 
+1 this is one C_line
+123 the D_line we are looking for
+23 the E_line is other one with numbers
+678 the F_line starts with 778
+the G_line ends with 567
+789 ok, the H_line is here
+anyway, they are all I_lines 
+which J_one is/are answer/s
