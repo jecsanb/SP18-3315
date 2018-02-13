@@ -11,10 +11,8 @@ echo "================================================"
 echo "= Rectangle Area and Parameter Calculator      ="
 echo "================================================"
 
-echo -n "Enter the Length: "
-read length
-echo -n "Enter the Width: "
-read width
+read -p "Enter the length: " length
+read -p "Enter the Width: " width
 
 let param="2 * ($length + $width)"
 let area="$length * $width"
