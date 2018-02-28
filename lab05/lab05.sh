@@ -1,10 +1,10 @@
-#! /bin/bash
+﻿#! /bin/bash
 #
 # lab05.sh
 # Copyright (C) 2018 Jecsan Blanco <jblancolicano1@buffs.wtamu.edu>
 #
-# A very inefficient  way of caluating pi.
-# This program ueses the Monte Carlo method of generating pi.
+# A very inefficient  way of calculating pi.
+# This program uses the Monte Carlo method of generating pi.
 #
 # If a circle of radius R is inscribed inside a square with side length 2R,
 # then the area of the circle will be pi*R^2 and the area of the square will be (2R)^2.
@@ -21,15 +21,18 @@ randMax=$(bc <<< "2^15 - 1");
 let inCircle=0;
 while ( pointsInSquare -gt 0 ); do
     #gen the point
-    x=$(echo "$scale;$RANDOM/$randMax" | bc);
-    y=$(echo "$scale;$RANDOM/$randMax" | bc);
-    d=$(echo "$scale;sqrt ( $x^2 + $y^2 )" | bc);
-    #check if it falls in the 1 quadrant of the circle.
+    x=$(bc <<< "$scale;$RANDOM/$randMax");
+    y=$(bc <<< "$scale;$RANDOM/$randMax");
+    #get the distance from origin
+    d=$(bc <<< "$scale;sqrt ( $x^2 + $y^2 )");
+
+    #check if it falls in the radius of the circle
     if [[ $(bc <<< "$d < 1") -eq 1 ]]; then
+        #yes
         ((inCircle++));
     fi
     ((pointsInSquare--));
 done
 pi=$(bc -l <<< "4($inCircle/$pointsInSquare)");
-echo "The aproximation of pi using $pointsInSquare random points is $pi."
+echo "The approximation of pi using $pointsInSquare random points is $pi."
 
