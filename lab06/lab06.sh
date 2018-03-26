@@ -1,22 +1,21 @@
-#! /bin/bash
+#!/bin/bash
 #
 # lab06.sh
 # Copyright (C) 2018 Jecsan Blanco <jblancolicano1@buffs.wtamu.edu>
 #
 # Distributed under terms of the MIT license.
 #
-
-echo "Monitoring `pwd` ..."
-echo "Press  ctrl-c to exit."
-GAP=5
-while ( true );do
-    sleep $GAP
-    for file in ./* ;do
-        if [ -N "./$file" ];then
-            echo "`date`: New entry in $file:"
-        fi
+path="$HOME/Desktop/"
+echo "Monitoring $path"
+if [ -e $path ];then
+    while (sleep 5);do
+        for file in "$path"* ;do
+            echo "monitoring `basename $file`"
+            if [ -N "$file" ];then
+                echo "`date` file `basename $file` was modified!"
+            fi
+        done
     done
-done
-
-
-
+else
+    echo "path does not exist!"
+fi
