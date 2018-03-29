@@ -3,19 +3,20 @@
 # lab06.sh
 # Copyright (C) 2018 Jecsan Blanco <jblancolicano1@buffs.wtamu.edu>
 #
-# Distributed under terms of the MIT license.
-#
 path="$HOME/Desktop/"
+changed=false
 echo "Monitoring $path"
-if [ -e $path ];then
-    while (sleep 5);do
-        for file in "$path"* ;do
-            echo "monitoring `basename $file`"
-            if [ -N "$file" ];then
-                echo "`date` file `basename $file` was modified!"
-            fi
-        done
+while ( true );do
+    for file in $path*;do
+        if [ -N "$file" ];then
+            echo "`date` file `basename $file` was modified!"
+            changed=true
+        fi
     done
-else
-    echo "path does not exist!"
-fi
+    if [ ! $changed ];then
+        echo “No Modified Files Found!”
+        cchanged=false
+    fi
+    sleep 5
+
+done
