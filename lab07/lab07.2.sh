@@ -5,7 +5,7 @@
 #
 # Distributed under terms of the MIT license.
 #
-PS3='Please enter your choice: '
+PS3='Please enter your choice or enter "quit" to quit:'
 menu=("Hamburger" "Turkey & Guacamole" "Grilled Chicken & Pesto" "Pizza" "quit");
 output=(
 'The price including tax for a hamburger is $5.40'
@@ -16,7 +16,7 @@ output=(
 )
 select opt in "${menu[@]}"
 do
-    case $opt in
+    case $REPLY in
         "1")
             echo "${output[`expr $REPLY-1`]}" ;;
         "2")
@@ -25,12 +25,12 @@ do
             echo "${output[`expr $REPLY-1`]}";;
         "4")
             echo "${output[`expr $REPLY-1`]}";;
-        "5")
+        "quit")
             echo "The code will quit!"
             exit 0
             ;;
         *)
-            echo "Invalid option!"
+            echo "The number is not valid!"
     esac
 done
 
