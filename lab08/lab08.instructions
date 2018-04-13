@@ -1,0 +1,38 @@
+CS 3315 SHELL SCRIPTS HW08 Due On 04/21/2018 10:00pm
+Please read the questions carefully before you start your work and write your answer clearly!
+Please ask the instructor any time if you don’t understand the question or find any mistakes in the
+question.
+In certain directories, there are some files with long names. Each file name contains one package,
+version and architecture information.
+First, your code should recognize if a file consists of three parts. If yes, please print out the
+package, version and architecture of the inputted files.
+Second, your code should recognize and print each number separated by dots in the file version.
+Third, your code should switch the third and fourth number of the file version, modify the file
+name and print the new file name out (you don’t need to save and change the original file name).
+The version of a file only has four groups of numbers which are separated by dots.
+ For example,
+firmware-linux-free_2.6.32.29_all. deb
+Package firmware-linux-free Version 2.6.32.29 is for the “all” architecture.
+Version consists of 2, 6, 32 and 29
+New filename is:
+firmware-linux-free_2.6.29.32_all. deb
+Fourth, Please show “No files with extension name deb in the directory” if there is no *.deb
+file in the directory.
+Grading Criterion:
+[1]. The grade will be zero if the submitted file is not the correct file.
+[2]. 60 points for code; 40 points for questions (10 points for each question).
+[3]. Please use the shell commands we have learned in class! You will not receive any points if your
+methods are not those we have learned in class 
+How to turn in your assignment:
+(1) Archive your folder HW08 using Windows file compress utility and give the archived file the name
+your_last_name_08.zip. Logon to WTCLASS server.
+(2) Click on ‘2018SP_CS_3315_01_Scripting Languages.’
+(3) Click on the left side item ‘Lessons’. (The remaining steps are to upload your archived work into the
+drop box.)
+(4) Click on ‘Course Content’ and then click on the drop box ‘HW #8.’
+(5) Enter the title as ‘HW #8’ and click on ‘Attachments.’
+(6) Click on ‘Browse’ and point to your saved and archived work ‘your_lastname_08.zip’ (in step 1) and
+then click ‘Open.’ Next click ‘Upload File’ and wait for the remote server to upload your work. Then
+click ‘Finished.’
+(7) Click ‘Submit.’ Now you will get the message on the screen “Your submission has been received
+successfully.” Click on ‘Log Off’ button on the left to exit from the submission site. 
