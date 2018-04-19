@@ -9,11 +9,22 @@
 for deb in ./*; do
     pkgname=`basename $deb`
     if [[ $pkgname =~ (.+)_(.*)_(.*)\.deb ]];then
-        echo "Package: ${BASH_REMATCH[1]}"
-        echo "Version: ${BASH_REMATCH[2]}"
-        echo "Architecture: ${BASH_REMATCH[3]}"
+        package=${BASH_REMATCH[1]}
+        version=${BASH_REMATCH[2]}
+        arch=${BASH_REMATCH[3]}
 
-        echo "Version consists of:`echo ${BASH_REMATCH[2]}| tr '.' ','`"
-        echo "New file name: $new_name"
+        echo "Package:${package}"
+        echo "Architecture: ${arch}"
+        echo "Version consists of:`echo ${version}| tr '.' ','`"
+
+        nums=${version:0:3}
+        f_num=${version:4:2}
+        l_num=${version:7:2}
+        new_version="${l_num}.${f_num}"
+        new_name="${package}.${nums}.${new_version}_${arch}.deb"
+        echo "New name: ${new_name}"
+
+
+
     fi
 done
